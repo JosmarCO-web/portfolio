@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sound &amp; Music — Josmar Córdoba Otárola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="music">
+<main>
+  <div class="page-head"><div class="label">Audio work</div><h1>Sound &amp; Music</h1><p>Mixing, mastering and production. Each track notes the work I did on it and who owns it.</p></div>
+  <ol class="tracks" id="tracks"></ol>
+</main>
+<div class="player-bar" id="pbar">
+  <div class="pb-progress" id="pb-progress"><div class="fill" id="pb-fill"></div></div>
+  <div class="pb-now"><img id="pb-art" alt=""><div style="min-width:0"><div class="t" id="pb-title"></div><div class="c" id="pb-credit"></div></div></div>
+  <div class="pb-ctrl">
+    <button id="pb-prev" aria-label="Previous track"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2h2v12H3zM14 2v12L6 8z"/></svg></button>
+    <button class="pp" id="pb-play" aria-label="Play"><svg id="pb-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l10 6-10 6z"/></svg></button>
+    <button id="pb-next" aria-label="Next track"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11 2h2v12h-2zM2 2v12l8-6z"/></svg></button>
+  </div>
+  <div class="pb-time"><span id="pb-cur">0:00</span><span>/</span><span id="pb-dur">0:00</span></div>
+</div>
+<audio id="audio" preload="metadata"></audio>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/music.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Videography — Josmar Córdoba Otárola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="videography">
+<main>
+  <div class="page-head"><div class="label">Video work</div><h1>Videography</h1><p>Commercial, short-form and personal video projects. Pick one to play.</p></div>
+  <section id="hub"></section>
+</main>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/theater.js"></script>
+<script>
+createHub(document.getElementById('hub'), {
+  items: SITE.videos, dock: true, backLabel: 'All videos',
+  thumb: function (v) { return ytThumb(v.yt); },
+  thumbFallback: function (img, v) { ytThumbFallback(img, v.yt); },
+  info: function (v) { return '<div><h2>' + esc(v.title) + '</h2>' + (v.desc ? '<p>' + esc(v.desc) + '</p>' : '') + '</div>'; }
+});
+</script>
+</body>
+</html>

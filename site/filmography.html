@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Filmography — Josmar Córdoba Otárola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="filmography">
+<main>
+  <div class="page-head"><div class="label">Directed &amp; authored work</div><h1>Filmography</h1></div>
+  <section id="hub"></section>
+</main>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/theater.js"></script>
+<script>
+createHub(document.getElementById('hub'), {
+  items: SITE.films, posters: true, backLabel: 'All films',
+  thumb: function (f) { return f.poster; },
+  sub: function (f) { return f.type; },
+  badge: function (f) { return f.award ? '<span class="badge">' + esc(f.award.name.replace(' Award','')) + ' ' + f.award.year + '</span>' : ''; },
+  info: function (f) {
+    return '<div><div class="label">' + esc(f.type) + '</div><h2 style="margin-top:8px">' + esc(f.title) + '</h2></div>' +
+      '<dl><dt>' + (f.roles.length > 1 ? 'Roles' : 'Role') + '</dt><dd>' + esc(f.roles.join(', ')) + '</dd>' +
+      (f.award ? '<dt>Award</dt><dd class="award">' + esc(f.award.name + ' — ' + f.award.by + ', ' + f.award.year) + '</dd>' : '') +
+      '</dl>';
+  }
+});
+</script>
+</body>
+</html>

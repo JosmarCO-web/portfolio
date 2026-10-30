@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Josmar Córdoba Otárola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+<main>
+  <div class="page-head"><div class="label">Contact</div><h1>Let’s work together.</h1><p>Photography, video, film or sound — reach out and tell me about your project.</p></div>
+  <section class="contact-big">
+    <a class="email" id="c-email"></a>
+    <div class="contact-rows" id="c-rows"></div>
+  </section>
+</main>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script>
+var e = document.getElementById('c-email'); e.href = 'mailto:' + SITE.email; e.textContent = SITE.email;
+document.getElementById('c-rows').innerHTML = SITE.socials.map(function (s) {
+  return '<a href="' + s.url + '" target="_blank" rel="noopener"><span>' + esc(s.label) + '</span><span>↗</span></a>';
+}).join('');
+</script>
+</body>
+</html>
